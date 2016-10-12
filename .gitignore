@@ -1,0 +1,14 @@
+# Unity
+Library
+Temp
+*.pidb
+*.userprefs
+
+# Rust
+Extras/*/target
+
+# Misc
+*.swp
+*.lnk
+.DS_Store
+Thumbs.db
