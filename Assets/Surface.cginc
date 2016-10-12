@@ -17,6 +17,7 @@ void vert(inout appdata_full v, out Input data)
 {
     UNITY_INITIALIZE_OUTPUT(Input, data);
     v.vertex = float4(CalculateVertex(v.texcoord.xy, _Progress), 1);
+    v.texcoord.xy = float2(v.texcoord.y, 1 - v.texcoord.x);
 }
 
 void surf(Input IN, inout SurfaceOutputStandard o)

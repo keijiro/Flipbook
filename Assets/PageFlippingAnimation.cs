@@ -3,27 +3,31 @@
 public class PageFlippingAnimation : MonoBehaviour
 {
     [SerializeField] Texture _texture;
-    [SerializeField] float _duration = 0.5f;
+    [SerializeField] float _interval = 0.15f;
     [SerializeField] float _delay = 0.0f;
 
     MaterialPropertyBlock _props;
-    float _time;
+    Vector3 _position;
+    float _lastTime;
 
     void Start()
     {
-        _time = _delay / _duration;
         _props = new MaterialPropertyBlock();
         _props.SetTexture("_MainTex", _texture);
+
+        _position = transform.position;
     }
 
     void Update()
     {
-        _props.SetFloat("_PreviousProgress", Mathf.Clamp01(_time));
+        var time = ((Time.time - _delay) / _interval) % 2;
 
-        _time = (_time + Time.deltaTime / _duration) % 2.0f;
-
-        _props.SetFloat("_Progress", Mathf.Clamp01(_time));
-
+        _props.SetFloat("_Progress", time);
+        _props.SetFloat("_PreviousProgress", _lastTime);
         GetComponent<Renderer>().SetPropertyBlock(_props);
+
+        transform.position = _position + Vector3.forward * time * 0.01f;
+
+        _lastTime = time;
     }
 }
