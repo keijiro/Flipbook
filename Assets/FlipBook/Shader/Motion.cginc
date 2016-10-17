@@ -23,8 +23,10 @@ struct v2f
 
 v2f vert(appdata v)
 {
-    float3 p0 = CalculateVertex(v.texcoord.xy, _PreviousProgress);
-    float3 p1 = CalculateVertex(v.texcoord.xy, _Progress);
+    float2 uv = v.texcoord.xy;
+
+    float3 p0 = CalculateVertex(uv.x, uv.y, _PreviousProgress);
+    float3 p1 = CalculateVertex(uv.x, uv.y, _Progress);
 
     float4 wp0 = mul(_PreviousM,  float4(p0, 1));
     float4 wp1 = mul(unity_ObjectToWorld, float4(p1, 1));
