@@ -168,7 +168,8 @@ ModelImporter:
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - LowManSkeleton/LowManHips/LowManSpine/LowManSpine1/LowManSpine2/LowManNeck
     clipAnimations: []
     isReadable: 0
   meshes:
