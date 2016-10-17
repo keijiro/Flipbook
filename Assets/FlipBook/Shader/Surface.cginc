@@ -23,7 +23,8 @@ void vert(inout appdata_full v, out Input data)
 void surf(Input IN, inout SurfaceOutputStandard o)
 {
     fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-    o.Albedo = c.rgb;
-    o.Metallic = _Metallic;
-    o.Smoothness = _Smoothness;
+    o.Emission = c.rgb;
+    //o.Albedo = c.rgb;
+//    o.Metallic = _Metallic;
+    //o.Smoothness = _Smoothness;
 }
