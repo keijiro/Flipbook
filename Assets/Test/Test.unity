@@ -262,11 +262,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 576802541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 2108874151}
+  m_Father: {fileID: 693743386}
   m_RootOrder: 0
 --- !u!114 &576802545
 MonoBehaviour:
@@ -329,6 +329,57 @@ MonoBehaviour:
   _ditherTexture3x3: {fileID: 2800000, guid: adbc8c1068bb14e46aff2da5b5a56ade, type: 3}
   _ditherTexture4x4: {fileID: 2800000, guid: dfd8142a3912e4e56b4b38d16a80fb2b, type: 3}
   _ditherTexture8x8: {fileID: 2800000, guid: d971e1109fb85431bbf91b6abe7be3e8, type: 3}
+--- !u!1 &693743385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 693743386}
+  - 114: {fileID: 693743387}
+  m_Layer: 0
+  m_Name: Jitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693743386
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693743385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 576802544}
+  m_Father: {fileID: 2108874151}
+  m_RootOrder: 0
+--- !u!114 &693743387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693743385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543ddbe12367a4899b011d43ef41f357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enablePositionNoise: 1
+  _enableRotationNoise: 1
+  _positionFrequency: 7
+  _rotationFrequency: 7
+  _positionAmplitude: 0.1
+  _rotationAmplitude: 4
+  _positionScale: {x: 1, y: 1, z: 0}
+  _rotationScale: {x: 0, y: 0, z: 1}
+  _positionFractalLevel: 3
+  _rotationFractalLevel: 3
 --- !u!1 &734371014
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,10 +622,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1184141695}
-  m_LocalRotation: {x: -0.21643952, y: -0, z: -0, w: 0.97629607}
+  m_LocalRotation: {x: -0.043619405, y: 0, z: 0, w: 0.9990483}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: -25, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -5, y: 0, z: 0}
   m_Children:
   - {fileID: 2108874151}
   m_Father: {fileID: 81501650}
@@ -595,7 +646,7 @@ MonoBehaviour:
   _positionFrequency: 0.2
   _rotationFrequency: 0.2
   _positionAmplitude: 0.5
-  _rotationAmplitude: 45
+  _rotationAmplitude: 30
   _positionScale: {x: 1, y: 1, z: 1}
   _rotationScale: {x: 1, y: 1, z: 1}
   _positionFractalLevel: 3
@@ -2713,7 +2764,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 576802544}
+  - {fileID: 693743386}
   m_Father: {fileID: 1184141696}
   m_RootOrder: 0
 --- !u!114 &2108874152
@@ -2731,7 +2782,7 @@ MonoBehaviour:
   _enableRotationNoise: 0
   _positionFrequency: 0.18
   _rotationFrequency: 0.2
-  _positionAmplitude: 0.8
+  _positionAmplitude: 0.3
   _rotationAmplitude: 10
   _positionScale: {x: 0, y: 0, z: 1}
   _rotationScale: {x: 1, y: 1, z: 0}
