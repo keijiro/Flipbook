@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Upgrade NOTE: commented out 'float4x4 _WorldToCamera', a built-in variable
 // Upgrade NOTE: replaced '_WorldToCamera' with 'unity_WorldToCamera'
 
@@ -201,7 +203,7 @@ v2f vert(appdata_img v)
     o.uv = UnityStereoScreenSpaceUVAdjust(v.texcoord, _MainTex_ST);
     o.uvAlt = UnityStereoScreenSpaceUVAdjust(uvAlt, _MainTex_ST);
 #else
-    o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+    o.pos = UnityObjectToClipPos(v.vertex);
     o.uv = v.texcoord;
     o.uvAlt = uvAlt;
 #endif
