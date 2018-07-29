@@ -1,0 +1,4 @@
+[submodule "Packages/jp.keijiro.kino.post-processing"]
+	path = Packages/jp.keijiro.kino.post-processing
+	url = https://github.com/keijiro/Kino.git
+	branch = upm

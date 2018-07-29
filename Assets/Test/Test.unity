@@ -208,6 +208,51 @@ MonoBehaviour:
   _rotationAxis: {x: 0, y: 1, z: 0}
   _rotationSpeed: 90
   _useLocalCoordinate: 1
+--- !u!1 &204964041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204964042}
+  - component: {fileID: 204964043}
+  m_Layer: 31
+  m_Name: Post Processing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &204964042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204964041}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2145629001}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &204964043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 204964041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 81df720cdadf61f4e9f46c707dbb417e, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &576802541
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,8 +264,6 @@ GameObject:
   - component: {fileID: 576802543}
   - component: {fileID: 576802542}
   - component: {fileID: 576802545}
-  - component: {fileID: 576802546}
-  - component: {fileID: 576802547}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -278,9 +321,9 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -293,7 +336,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2003456590}
   m_Father: {fileID: 693743386}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -305,59 +349,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 576802541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ffff0e474954f3a926daf865cc2eaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lineColor: {r: 0, g: 0, b: 0, a: 1}
-  _backgroundColor: {r: 1, g: 1, b: 1, a: 1}
-  _lowThreshold: 0.015
-  _highThreshold: 0.049
-  _depthSensitivity: 0
-  _normalSensitivity: 1
-  _fallOffDepth: 40
-  _shader: {fileID: 4800000, guid: b8cb1cfbd02c146ccbe95b4baf27a54e, type: 3}
---- !u!114 &576802546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 576802541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d901ddf32d7c84ed4b0f84623ef3a7a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _intensity: 4
-  _radius: 0.5
-  _sampleCount: 3
-  _sampleCountValue: 24
-  _downsampling: 0
-  _occlusionSource: 2
-  _ambientOnly: 0
-  _aoShader: {fileID: 4800000, guid: 7541b5f18b1224a81927d8b1184b122b, type: 3}
-  _quadMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &576802547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 576802541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 801e272fe799a4b1285b38cce9afa88d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ditherMatrix: 0
-  _ditherScale: 1
-  _color0: {r: 0, g: 0, b: 0, a: 1}
-  _color1: {r: 1, g: 1, b: 1, a: 1}
-  _blendMode: 0
-  _blendFactor: 1
-  _shader: {fileID: 4800000, guid: 5374979fad08f417c8ce8360cbdfc4fc, type: 3}
-  _ditherTexture2x2: {fileID: 2800000, guid: 154fd938bd1674daa81008e8865fc71c, type: 3}
-  _ditherTexture3x3: {fileID: 2800000, guid: adbc8c1068bb14e46aff2da5b5a56ade, type: 3}
-  _ditherTexture4x4: {fileID: 2800000, guid: dfd8142a3912e4e56b4b38d16a80fb2b, type: 3}
-  _ditherTexture8x8: {fileID: 2800000, guid: d971e1109fb85431bbf91b6abe7be3e8, type: 3}
+  volumeTrigger: {fileID: 576802544}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  antialiasingMode: 2
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: Kino.PostProcessing.Isoline, jp.keijiro.kino.post-processing.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - assemblyQualifiedName: Kino.PostProcessing.Recolor, jp.keijiro.kino.post-processing.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - assemblyQualifiedName: Kino.PostProcessing.Streak, jp.keijiro.kino.post-processing.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_AfterStackBundles:
+  - assemblyQualifiedName: Kino.PostProcessing.Overlay, jp.keijiro.kino.post-processing.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &693743385
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +543,7 @@ Transform:
   m_LocalScale: {x: 1.6, y: 1, z: 0.9}
   m_Children: []
   m_Father: {fileID: 2145629001}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
 --- !u!1001 &741239227
 Prefab:
@@ -625,7 +674,7 @@ Transform:
   m_LocalScale: {x: 1.6, y: 1, z: 0.9}
   m_Children: []
   m_Father: {fileID: 2145629001}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
 --- !u!114 &893205309
 MonoBehaviour:
@@ -1154,7 +1203,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1207,7 +1256,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -5329,12 +5378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1769020304}
   - component: {fileID: 1769020303}
-  - component: {fileID: 1769020302}
-  - component: {fileID: 1769020301}
   - component: {fileID: 1769020300}
-  - component: {fileID: 1769020307}
-  - component: {fileID: 1769020305}
-  - component: {fileID: 1769020306}
   m_Layer: 31
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5342,27 +5386,72 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1769020300
-AudioListener:
+--- !u!114 &1769020300
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1769020299}
   m_Enabled: 1
---- !u!124 &1769020301
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769020299}
-  m_Enabled: 1
---- !u!92 &1769020302
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769020299}
-  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1769020304}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 2147483648
+  stopNaNPropagation: 1
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles:
+  - assemblyQualifiedName: Kino.PostProcessing.Isoline, jp.keijiro.kino.post-processing.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - assemblyQualifiedName: Kino.PostProcessing.Recolor, jp.keijiro.kino.post-processing.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - assemblyQualifiedName: Kino.PostProcessing.Streak, jp.keijiro.kino.post-processing.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_AfterStackBundles:
+  - assemblyQualifiedName: Kino.PostProcessing.Overlay, jp.keijiro.kino.post-processing.Runtime,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!20 &1769020303
 Camera:
   m_ObjectHideFlags: 0
@@ -5397,9 +5486,9 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -5416,62 +5505,56 @@ Transform:
   m_Father: {fileID: 2145629001}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1769020305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769020299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 860e82cd7a6bb4a29a4b7add4ec78d10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _shutterAngle: 360
-  _sampleCount: 10
-  _frameBlending: 0
-  _reconstructionShader: {fileID: 4800000, guid: 60701d53f4c638048b5e49c197d08b77,
-    type: 3}
-  _frameBlendingShader: {fileID: 4800000, guid: 95caa7c3844725840aec8dad64ac258e,
-    type: 3}
---- !u!114 &1769020306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769020299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc18a55c333d51489e5ee49b3cbff50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _falloff: 0.5
-  _shader: {fileID: 4800000, guid: 89a223cbeee1935419811f8736c0a9b3, type: 3}
---- !u!114 &1769020307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769020299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d901ddf32d7c84ed4b0f84623ef3a7a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _intensity: 3
-  _radius: 0.45
-  _sampleCount: 3
-  _sampleCountValue: 24
-  _downsampling: 1
-  _occlusionSource: 2
-  _ambientOnly: 0
-  _aoShader: {fileID: 4800000, guid: 7541b5f18b1224a81927d8b1184b122b, type: 3}
-  _quadMesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1845994899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400092, guid: 7e15121f5f042ed46aba81406403f2d2,
     type: 3}
   m_PrefabInternal: {fileID: 741239227}
+--- !u!1 &2003456589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003456590}
+  - component: {fileID: 2003456591}
+  m_Layer: 8
+  m_Name: Post Processing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2003456590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003456589}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 576802544}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003456591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2003456589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 3e2a02745cea8f04a96990033bc91f96, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &2092032490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5557,7 +5640,7 @@ Transform:
   m_LocalScale: {x: 1.6, y: 1, z: 0.9}
   m_Children: []
   m_Father: {fileID: 2145629001}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
 --- !u!1 &2108874150
 GameObject:
@@ -5637,6 +5720,7 @@ Transform:
   m_Children:
   - {fileID: 1616480139}
   - {fileID: 1769020304}
+  - {fileID: 204964042}
   - {fileID: 893205308}
   - {fileID: 2092032494}
   - {fileID: 734371018}
