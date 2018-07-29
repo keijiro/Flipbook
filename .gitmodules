@@ -10,3 +10,7 @@
 	path = Packages/jp.keijiro.neolowman
 	url = https://github.com/keijiro/NeoLowMan.git
 	branch = upm
+[submodule "Packages/jp.keijiro.kvant.warp"]
+	path = Packages/jp.keijiro.kvant.warp
+	url = https://github.com/keijiro/KvantWarp.git
+	branch = upm
