@@ -10,3 +10,11 @@
 	path = Packages/jp.keijiro.neolowman
 	url = https://github.com/keijiro/NeoLowMan.git
 	branch = upm
+[submodule "Packages/jp.keijiro.klak"]
+	path = Packages/jp.keijiro.klak
+	url = https://github.com/keijiro/Klak.git
+	branch = upm
+[submodule "Packages/jp.keijiro.klak.timeline.procedural-motion"]
+	path = Packages/jp.keijiro.klak.timeline.procedural-motion
+	url = https://github.com/keijiro/ProceduralMotionTrack.git
+	branch = upm
