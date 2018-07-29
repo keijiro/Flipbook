@@ -6,3 +6,7 @@
 	path = Packages/jp.keijiro.cmu-mocap
 	url = https://github.com/keijiro/CMUMocap.git
 	branch = upm
+[submodule "Packages/jp.keijiro.neolowman"]
+	path = Packages/jp.keijiro.neolowman
+	url = https://github.com/keijiro/NeoLowMan.git
+	branch = upm
