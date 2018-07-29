@@ -2,3 +2,7 @@
 	path = Packages/jp.keijiro.kino.post-processing
 	url = https://github.com/keijiro/Kino.git
 	branch = upm
+[submodule "Packages/jp.keijiro.cmu-mocap"]
+	path = Packages/jp.keijiro.cmu-mocap
+	url = https://github.com/keijiro/CMUMocap.git
+	branch = upm
