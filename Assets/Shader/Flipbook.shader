@@ -1,20 +1,22 @@
-﻿Shader "Custom/FlipBook"
+﻿// Flip book effect example
+// https://github.com/keijiro/FlipBook
+
+Shader "Hidden/Flipbook"
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Curve ("Curve", Float) = 0.15
-        _Progress ("Progress", Range(0,1)) = 0
+        _MainTex("", 2D) = "white" {}
+        _BackColor("", Color) = (1, 1, 1, 1)
     }
     SubShader
     {
         Tags { "RenderType"="Opaque" }
 
+        Cull Off
+
         Pass
         {
             Tags { "LightMode" = "MotionVectors" }
-            Cull Off
             ZWrite Off
             Offset -1, -1
             CGPROGRAM
@@ -26,7 +28,7 @@
         }
 
         CGPROGRAM
-        #pragma surface surf Standard vertex:vert nolightmap
+        #pragma surface surf Standard vertex:vert addshadow nolightmap
         #pragma target 3.0
         #include "Surface.cginc"
         ENDCG

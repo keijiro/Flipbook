@@ -1,4 +1,4 @@
-FlipBook
+Flipbook
 --------
 
 ![gif](https://i.imgur.com/xFivlat.gif)
